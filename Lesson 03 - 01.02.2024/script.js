@@ -7,3 +7,5 @@ function task1() {
         document.getElementById("output1").innerHTML = "unripe"
     }
 }
+
+alert("welcome to git!")
