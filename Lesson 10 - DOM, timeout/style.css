@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;600;700;900&display=swap');
 
 :root {
-    --bg: #2243ff;
+    --bg: #c4c700;
 }
 
 body {
@@ -53,19 +53,31 @@ button:hover {
     filter: brightness(1.2);
 }
 
-input,
-select {
-    border: 1px solid;
-    padding: 8px 12px;
-    border-radius: 5px;
-    margin-top: 3px;
-}
 
-.ltr {
+.board {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
     direction: ltr;
-    display: inline-block;
+
+    margin: 0 auto;
+
+    width: 550px;
 }
 
-#numbers {
-    padding-bottom: 16px;
+.board>div {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+
+    padding: 5px;
+
+    background-color: white;
+}
+
+.board>div:nth-child() {
+    background-color: rgb(41, 255, 255);
+}
+
+.board>div:nth-child(10n -9) {
+    background-color: rgb(41, 255, 255);
 }

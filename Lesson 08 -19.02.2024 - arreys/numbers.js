@@ -1,4 +1,4 @@
-const numbers = [
+let numbers = [
     274,
     209,
     648,

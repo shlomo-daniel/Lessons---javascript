@@ -1,52 +1,108 @@
-const div = document.querySelector("#numbers");
-const output = document.querySelector("#output");
+const showResult = document.querySelector("#numbers");
 
-div.innerHTML = numbers.join(" - ");
-
-// 
 function max() {
-    let cnumber = numbers[0];
+    let currentNumber = numbers[0]
 
-    for (let i = 0; i < numbers.lenght; i++) {
-        if (numbers[i] > num) {
-            num = numbers[i];
+    for (index = 0; index <= numbers.length; index++) {
+        if (currentNumber < numbers[index]) {
+            currentNumber = numbers[index]
         }
     }
-    output.innerHTML = `<b>the biggest number is: ${num}`
+
+    showResult.innerHTML = currentNumber;
 }
-// 
+
 function min() {
-    let cnumber = numbers[0];
+    let currentNumber = numbers[0]
 
-    for (let i = 0; i < numbers.lenght; i++) {
-        if (numbers[i] > num) {
-            num = numbers[i];
+    for (index = 0; index <= numbers.length; index++) {
+        if (currentNumber > numbers[index]) {
+            currentNumber = numbers[index]
         }
     }
-    output.innerHTML = `<b>the biggest number is: ${num}`
+
+    showResult.innerHTML = currentNumber;
 }
-// 
+
 function sum() {
-    let res = 0;
+    let sumArrey = 0;
 
-    for (let i = 0; i < numbers.lenght; i++) {
-        res += numbers[i]
+    for (index = 0; index < numbers.length; index++) {
+        sumArrey += numbers[index];
     }
+    showResult.innerHTML = sumArrey;
 }
-// 
 
-// 
+function count() {
+    for (i = 0; i < numbers.length; i++) { }
+    showResult.innerHTML = i;
+}
+
 function avg() {
-    let res = 0;
-
-    for (let i = 0; i < numbers.lenght; i++) {
-        res += numbers[i];
+    let numbersSum = 0;
+    for (i = 0; i < numbers.length; i++) {
+        numbersSum += numbers[i];
     }
-    const average = Math.round(res / numbers.length)
-    output.innerHTML = `<b>the avarage is:${average}</b>`;
+    const resultAvg = numbersSum / i;
+    showResult.innerHTML = Math.floor(resultAvg);
 }
-// 
-function leftEnd() {
+
+function sortAsc() {
+    numbers.sort((a, b) => a - b)
+    showResult.innerHTML = numbers.join(', ') + '.';
+}
+
+function sortDesc() {
+    numbers.sort((a, b) => b - a)
+    showResult.innerHTML = numbers.join(', ') + '.';
+}
+
+function removeStart() {
+    numbers.shift();
+    showResult.innerHTML = numbers.join(', ') + '.';
+}
+function removeEnd() {
     numbers.pop();
-    div.innerHTML = numbers;
+    showResult.innerHTML = numbers.join(', ') + '.';
 }
+function lines() {
+    showResult.innerHTML = numbers.join('<br>');
+}
+
+function inline() {
+    showResult.innerHTML = numbers.join(', ') + '.';
+}
+
+function addRandomToStart() {
+    const randomNumber = Math.floor(Math.random() * 1000);
+    numbers.unshift(randomNumber);
+    showResult.innerHTML = numbers.join(', ') + '.';
+}
+
+function addRandomToEnd(randomNumber) {
+    randomNumber = Math.floor(Math.random() * 1000);
+    numbers.push(randomNumber);
+    showResult.innerHTML = numbers.join(', ') + '.';
+}
+
+function addByUserStart() {
+    const addedNumber = document.querySelector('#addNumber').value;
+    numbers.unshift(addedNumber);
+    showResult.innerHTML = numbers.join(', ') + '.';
+}
+
+function addByUserEnd() {
+    const addedNumber = document.querySelector('#addNumber').value;
+    numbers.push(addedNumber);
+    showResult.innerHTML = numbers.join(', ') + '.';
+}
+
+function removeByUserInput() {
+    const inputToRemove = document.querySelector('#inputToRemove');
+    // remove function
+    numbers.splice(inputToRemove.value - 1, 1);
+
+    showResult.innerHTML = numbers.join(", ") + '.';
+}
+// set max to input
+inputToRemove.setAttribute("max", numbers.length);

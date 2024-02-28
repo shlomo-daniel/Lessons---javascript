@@ -23,16 +23,35 @@
             <button onclick="count()">כמות מספרים</button>
             <button onclick="avg()">ממוצע</button>
             <button onclick="sortAsc()">מיון בסדר עולה</button>
-            <button>מיון בסדר יורד</button>
-            <button onclick="leftEnd()">הסרה מההתחלה</button>
-            <button>הסרה מהסוף</button>
-            <button>הוספת מספר רנדומלי להתחלה</button>
-            <button>הוספת מספר רנדומלי לסוף</button>
-            <button>שורות נפרדות</button>
-            <button>בשורה אחת</button>
+            <button onclick="sortDesc()">מיון בסדר יורד</button>
+            <button onclick="removeStart()">הסרה מההתחלה</button>
+            <button onclick="removeEnd()">הסרה מהסוף</button>
+            <button onclick="lines()">שורות נפרדות</button>
+            <button onclick="inline()">בשורה אחת</button>
+            <button onclick="addRandomToStart()">הוספת מספר רנדומלי להתחלה</button>
+            <button onclick="addRandomToEnd()">הוספת מספר רנדומלי לסוף</button>
         </div>
 
         <p id="output"></p>
+
+        <div class="task">
+            <h2>אפשרות להוספת מספר</h2>
+            <input type="Number" id="addNumber">
+            <button onclick="addByUserStart()">להתחלה</button>
+            <button onclick="addByUserEnd()">לסוף</button>
+        </div>
+
+        <div class="task">
+            <h2>אפשרות להסיר מספר לפי מיקום (יש להגדיר מינימום ומקסימום מהקוד)</h2>
+            <input type="number" min="1" id="inputToRemove">
+            <button onclick="removeByUserInput()">הסר</button>
+        </div>
+
+        <div class="task">
+            <h2>אפשרות להסיר מספר לפי הקלט</h2>
+            <input type="number">
+            <button>הסר</button>
+        </div>
     </div>
 </body>
 

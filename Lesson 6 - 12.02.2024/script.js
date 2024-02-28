@@ -46,22 +46,23 @@
 // }
 
 // task 3
-function showWhatLess() {
-    // get
-    const number = +document.getElementById("inputWhatLess").value
+// print all the numbers that are less than input
+// function showWhatLess() {
+//     // get
+//     const number = +document.getElementById("inputWhatLess").value
 
-    let result = "";
+//     let result = "";
 
-    // initilaize
-    let showAndLimit = 1;
+//     // initilaize
+//     let showAndLimit = 1;
 
-    while (showAndLimit <= number) {
-        // print to p element
-        document.getElementById("showSmaller").innerHTML = showAndLimit;
-    }
-    // add inorder for the loop to continue
-    showAndLimit++
-}
+//     while (showAndLimit <= number) {
+//         // print to p element
+//         document.getElementById("showSmaller").innerHTML = showAndLimit;
+//     }
+//     // add inorder for the loop to continue
+//     showAndLimit++
+// }
 
 // **********
 // practice
@@ -112,3 +113,25 @@ function parik(numTest) {
     }
 
 }
+
+// task 3
+// print all the numbers that are less than input
+function showWhatLess() {
+    let numbers = "";
+    const inputUser = document.querySelector("#inputWhatLess")
+    let resultOfSmallNumbers = document.querySelector("#showSmaller")
+    index = 0;
+
+    while (index < inputUser.value) {
+        numbers += index + ', ';
+
+        resultOfSmallNumbers.innerHTML = numbers;
+
+        index++;
+    }
+    // swap the , to .
+    numbers = numbers.slice(-0, -2);
+    numbers += '.';
+    resultOfSmallNumbers.innerHTML = numbers;
+}
+
