@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;600;700;900&display=swap');
 
 :root {
-    --bg: #00c458;
+    --bg: #3e3e3e;
 }
 
 body {
@@ -53,31 +53,43 @@ button:hover {
     filter: brightness(1.2);
 }
 
-
-.board {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    direction: ltr;
-
-    margin: 0 auto;
-
-    width: 550px;
+input,
+select {
+    border: 1px solid;
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin-top: 3px;
 }
 
-.board>div {
-    border: 1px solid black;
+.circle {
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    background-color: #0098c7;
+    border-radius: 50%;
     display: flex;
+    align-items: center;
     justify-content: center;
-
-    padding: 5px;
-
-    background-color: white;
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-.board>div:nth-child() {
-    background-color: rgb(41, 255, 255);
+.circle:hover {
+    scale: 1.1;
 }
 
-.board>div:nth-child(10n -9) {
-    background-color: rgb(41, 255, 255);
+.traffic-light {
+    background-color: black;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.traffic-light>div {
+    height: 50px;
+    width: 50px;
+    background-color: #c1c1c1;
+    margin: 8px;
+    border-radius: 50%;
 }
