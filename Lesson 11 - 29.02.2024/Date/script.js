@@ -38,5 +38,4 @@ function showTheTime() {
 }
 
 showTheTime();
-
 setInterval(showTheTime, 100);
