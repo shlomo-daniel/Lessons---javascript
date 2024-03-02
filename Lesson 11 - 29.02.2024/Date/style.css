@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;600;700;900&display=swap');
 
 :root {
-    --bg: #3e3e3e;
+    --bg: #ba00b0;
 }
 
 body {
@@ -59,37 +59,4 @@ select {
     padding: 8px 12px;
     border-radius: 5px;
     margin-top: 3px;
-}
-
-.circle {
-    cursor: pointer;
-    width: 100px;
-    height: 100px;
-    background-color: #0098c7;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    color: white;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.circle:hover {
-    scale: 1.1;
-}
-
-.traffic-light {
-    background-color: black;
-    display: inline-block;
-    border-radius: 4px;
-}
-
-.traffic-light>div {
-    height: 50px;
-    width: 50px;
-    background-color: #c1c1c1;
-    margin: 8px;
-    border-radius: 50%;
 }

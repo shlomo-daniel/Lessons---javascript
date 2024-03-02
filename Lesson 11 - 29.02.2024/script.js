@@ -49,19 +49,52 @@
 
 
 // main div of all lights
+
+//father div for selection of childrens 
 const trafficLight = document.querySelector(".traffic-light")
 
+// every div light in a var
 const redLight = trafficLight.querySelector("div")
 const yellowLight = trafficLight.querySelector("div:nth-child(2)")
 const greenLight = trafficLight.querySelector("div:last-child")
 
+// track the index of time out
+let timeOutIndex;
+
 // reset all lights
-function resetlights() {
-    yellowLight.computedStyleMap.backgroundcolor = ""
+function resetLights() {
+    redLight.style.backgroundColor = '';
+    yellowLight.style.backgroundColor = '';
+    greenLight.style.backgroundColor = '';
 }
 
-function red() { }
+function red() {
+    resetLights()
+    redLight.style.backgroundColor = "red";
+    timeOutIndex = setTimeout(redAndyellow, 3000);
+}
 
-function yellow() { }
+function redAndyellow() {
+    resetLights();
+    redLight.style.backgroundColor = "red";
+    yellowLight.style.backgroundColor = "yellow";
+    timeOutIndex = setTimeout(green, 1000)
+}
 
-function green() { }
+function green() {
+    resetLights();
+    greenLight.style.backgroundColor = "green";
+    timeOutIndex = setTimeout(yellow, 3000);
+}
+
+function yellow() {
+    resetLights();
+    yellowLight.style.backgroundColor = "yellow";
+    timeOutIndex = setTimeout(red, 2000)
+}
+
+red();
+
+function stopLights() {
+    clearTimeout(timeOutIndex);
+}
