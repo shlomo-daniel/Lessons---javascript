@@ -20,7 +20,7 @@ function addTask() {
 
     // remove button 
     createButton.addEventListener('click', function () {
-        const ask = confirm(`are you sure you want to delete ${createDiv.innerHTML}?`);
+        const ask = confirm(`Are you sure you want to delete "${createDiv.innerHTML}"?`);
 
         if (ask) {
             createLi.remove();
