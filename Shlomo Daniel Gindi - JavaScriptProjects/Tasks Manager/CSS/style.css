@@ -93,6 +93,8 @@ select {
     display: block;
 
     padding: 0px 5px;
+
+    text-align: center;
 }
 
 button.addButton {
