@@ -98,3 +98,7 @@ red();
 function stopLights() {
     clearTimeout(timeOutIndex);
 }
+
+// flasing traffic light
+
+const flashingYellow = document.querySelector("flashing_yellow:nth")
