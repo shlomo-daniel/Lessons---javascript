@@ -115,6 +115,7 @@ button.addButton {
 
 button:hover {
     filter: brightness(1.2);
+    cursor: pointer;
 }
 
 ul button {

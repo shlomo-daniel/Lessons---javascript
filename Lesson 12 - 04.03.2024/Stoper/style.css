@@ -1,17 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;600;700;900&display=swap');
 
 :root {
-    --bg: #ba00b0;
+    --bg: #0084ff;
 }
 
 body {
-    direction: rtl;
+    /* direction: rtl; */
     font-family: 'Rubik', sans-serif;
     background-color: var(--bg);
 }
 
 h1 {
     color: white;
+    text-align: center;
+}
+
+p {
+    font-size: 20px;
     text-align: center;
 }
 
