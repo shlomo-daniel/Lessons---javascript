@@ -1,7 +1,7 @@
 const tasks = document.querySelector(".tasks");
 
 // פונקציה להוספת אלמנטים
-function newTask() {
+function newTask(value = '') {
     // יצירת אלמנט חדש
     const li = document.createElement('li');
 
@@ -13,6 +13,7 @@ function newTask() {
 
     // מאפשרים למשתמש לערוך את התוכן של האלמנט
     div.contentEditable = true;
+    div.innerHTML = value;
     li.appendChild(div);
 
     // יצירת לחצן מחיקה
@@ -26,7 +27,36 @@ function newTask() {
         if (isAllowed) {
             li.remove();
         }
+
+        saveTasks();
     });
 
     li.appendChild(btn);
+
+    div.addEventListener('input', saveTasks);
+}
+
+function saveTasks() {
+    const list = document.querySelectorAll('.tasks li');
+    const arr = [];
+
+    for (const li of list) {
+        const name = li.querySelector('div').innerText.trim();
+
+        if (name) {
+            arr.push(name);
+        }
+    }
+
+    localStorage.setItem('tasks', JSON.stringify(arr));
+}
+
+function initialData() {
+    if (localStorage.tasks) {
+        const tasks = JSON.parse(localStorage.tasks);
+
+        for (const task of tasks) {
+            newTask(task);
+        }
+    }
 }
