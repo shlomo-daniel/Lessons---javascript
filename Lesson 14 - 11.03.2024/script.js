@@ -35,7 +35,7 @@ function newTask(value = '') {
 
     div.addEventListener('input', saveTasks);
 }
-
+// save to local storage 
 function saveTasks() {
     const list = document.querySelectorAll('.tasks li');
     const arr = [];
@@ -50,7 +50,7 @@ function saveTasks() {
 
     localStorage.setItem('tasks', JSON.stringify(arr));
 }
-
+// load the tasks from local storage
 function initialData() {
     if (localStorage.tasks) {
         const tasks = JSON.parse(localStorage.tasks);
